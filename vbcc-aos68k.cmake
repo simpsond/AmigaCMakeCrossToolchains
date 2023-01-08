@@ -14,7 +14,7 @@ set(TOOLCHAIN_PREFIX_DASHED "${TOOLCHAIN_PREFIX}-")
 
 set(AMIGA 1)
 set(AMIGAOS3 1)
-set(M68K_COMPILER "Bebbo")
+set(M68K_COMPILER "VBCC")
 
 # CPU
 set(M68K_CPU_TYPES "68000" "68010" "68020" "68040" "68060" "68080")
@@ -29,7 +29,7 @@ set_property(CACHE M68K_FPU PROPERTY STRINGS ${M68K_FPU_TYPES})
 # CRT
 set(M68K_CRT_TYPES "amiga" "none")
 if(NOT DEFINED CACHE{M68K_CRT})
-	message(NOTICE "M68K_CRT not set, defaulting C Runtime to libnix")
+	message(NOTICE "M68K_CRT not set, defaulting C Runtime to amiga")
 endif()
 set(M68K_CRT "amiga" CACHE STRING "Target std lib")
 set_property(CACHE M68K_CRT PROPERTY STRINGS ${M68K_CRT_TYPES})
